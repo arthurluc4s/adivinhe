@@ -15,17 +15,17 @@ int main() {
     scanf("%d", &chute);
 
     printf("Você chutou o número: %d\n", chute);
-
+    
+    int acertou = (chute == numerosecreto);
     //Verifica o chute do usuário
-    if (chute == numerosecreto)
+    if (acertou)
         printf("Você acertou o número. Parabéns!\n");
     else {
-        printf("Você errou o número. Tente novamente.\n");
-        if (chute > numerosecreto) {
+        int maior = (chute > numerosecreto);
+        if (maior) {
             printf("Tente um número menor!\n");
-        }
-        if (chute < numerosecreto) {
-            printf("Tente um número maior!");
+        } else {
+            printf("Tente um número maior!\n");
         }
     }
 
