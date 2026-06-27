@@ -16,5 +16,12 @@ int main() {
 
     printf("Você chutou o número: %d\n", chute);
 
+    //Verifica o chute do usuário
+    if (chute == numerosecreto)
+        printf("Você acertou o número. Parabéns!\n");
+    else
+        printf("Você errou o número! Tente novamente.\n");
+
+
     return 0;
 }
