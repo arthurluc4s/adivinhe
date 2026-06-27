@@ -19,9 +19,15 @@ int main() {
     //Verifica o chute do usuário
     if (chute == numerosecreto)
         printf("Você acertou o número. Parabéns!\n");
-    else
-        printf("Você errou o número! Tente novamente.\n");
-
+    else {
+        printf("Você errou o número. Tente novamente.\n");
+        if (chute > numerosecreto) {
+            printf("Tente um número menor!\n");
+        }
+        if (chute < numerosecreto) {
+            printf("Tente um número maior!");
+        }
+    }
 
     return 0;
 }
