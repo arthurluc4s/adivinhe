@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //Diretiva que funciona como constante
 #define N_TENTATIVAS 5
@@ -7,6 +8,7 @@ int main() {
     //Variáveis
     int numerosecreto = 42;
     int chute;
+    float pontos = 100;
 
     //Imprime a introdução do jogo
     printf("##########################\n");
@@ -41,8 +43,10 @@ int main() {
             printf("%d é maior que o número secreto.\n\n", chute);
         else
             printf("%d é menor que o número secreto.\n\n", chute);
+        pontos -= abs(numerosecreto - chute) / 2.0;
     }
-    printf("# Fim de jogo #\n");
+    printf("#    Fim de jogo   #\n");
+    printf("#  Pontuação: %.1f #\n", pontos);
 
     return 0;
 }
