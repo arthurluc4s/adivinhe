@@ -27,13 +27,13 @@ int main() {
 
     switch (nivel) {
         case 1:
-            n_tentativas = 3;
+            n_tentativas = 9;
             break;
         case 2:
             n_tentativas = 6;
             break;
         case 3:
-            n_tentativas = 9;
+            n_tentativas = 3;
             break;
     }
 
