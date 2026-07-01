@@ -1,12 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> //Necessária para o printf
+#include <stdlib.h> //Necessária para rand, srand, abs
+#include <time.h> //Necessária para time
 
 //Diretiva que funciona como constante
 #define N_TENTATIVAS 5
 
 int main() {
+    
     //Variáveis
-    int numerosecreto = 42;
+    srand(time(0)); //Alimenta a semente da função rand
+    int numerosecreto = rand() % 101;
     int chute;
     float pontos = 100;
 
