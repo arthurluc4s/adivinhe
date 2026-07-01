@@ -2,9 +2,6 @@
 #include <stdlib.h> //Necessária para rand, srand, abs
 #include <time.h> //Necessária para time
 
-//Diretiva que funciona como constante
-#define N_TENTATIVAS 5
-
 int main() {
     
     //Variáveis
@@ -12,16 +9,38 @@ int main() {
     int numerosecreto = rand() % 101;
     int chute;
     float pontos = 100;
+    int n_tentativas;
+    int nivel;
 
     //Imprime a introdução do jogo
     printf("##########################\n");
     printf("#         Adivinhe       #\n");
-    printf("##########################\n");
+    printf("##########################\n\n");
+
+    printf("#     Níveis do jogo     #\n");
+    printf("#(1) Fácil               #\n");
+    printf("#(2) Médio               #\n");
+    printf("#(3) Difícil             #\n");
+    printf("Digite o nível: ");
+    scanf("%d", &nivel);
+    printf("\n");
+
+    switch (nivel) {
+        case 1:
+            n_tentativas = 3;
+            break;
+        case 2:
+            n_tentativas = 6;
+            break;
+        case 3:
+            n_tentativas = 9;
+            break;
+    }
 
     //Loop de tentativas
-    for(int i = 1; i <= N_TENTATIVAS; i++) {
+    for(int i = 1; i <= n_tentativas; i++) {
 
-        printf("# Tentativa %d/%d #\n", i, N_TENTATIVAS);
+        printf("# Tentativa %d/%d #\n", i, n_tentativas);
         //Lê e imprime o chute do usuário
         printf("Digite seu chute: ");
         scanf("%d", &chute);
@@ -40,6 +59,7 @@ int main() {
         //Verifica o chute do usuário
         if (acertou) {
             printf("Parabéns!\n%d é o número secreto.\nVocê acertou.\n\n", chute);
+            printf("#  Pontuação: %.1f #\n", pontos);
             //Encerra o loop quando acertar o número
             break;
         } else if (maior)
@@ -49,7 +69,5 @@ int main() {
         pontos -= abs(numerosecreto - chute) / 2.0;
     }
     printf("#    Fim de jogo   #\n");
-    printf("#  Pontuação: %.1f #\n", pontos);
-
     return 0;
 }
