@@ -10,7 +10,7 @@ int main() {
 
     //Imprime a introdução do jogo
     printf("##########################\n");
-    printf("#        Adivinhe!       #\n");
+    printf("#         Adivinhe       #\n");
     printf("##########################\n");
 
     //Loop de tentativas
@@ -20,7 +20,13 @@ int main() {
         //Lê e imprime o chute do usuário
         printf("Digite seu chute: ");
         scanf("%d", &chute);
-        printf("Você chutou o número: %d\n", chute);
+
+        //Validação da entrada do usuário: números negativos
+        if (chute < 0) {
+            printf("# Não vale números negativos #\n\n");
+            i--;
+            continue;
+        } 
 
         //Testes condicionais do jogo
         int acertou = (chute == numerosecreto);
@@ -28,15 +34,15 @@ int main() {
         
         //Verifica o chute do usuário
         if (acertou) {
-            printf("Você acertou o número. Parabéns!\n");
+            printf("Parabéns!\n%d é o número secreto.\nVocê acertou.\n\n", chute);
             //Encerra o loop quando acertar o número
             break;
         } else if (maior)
-            printf("Tente um número menor!\n");
+            printf("%d é maior que o número secreto.\n\n", chute);
         else
-            printf("Tente um número maior!\n");
+            printf("%d é menor que o número secreto.\n\n", chute);
     }
-    printf("# Fim de jogo! #\n");
+    printf("# Fim de jogo #\n");
 
     return 0;
 }
