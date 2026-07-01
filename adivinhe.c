@@ -11,6 +11,7 @@ int main() {
     float pontos = 100;
     int n_tentativas;
     int nivel;
+    int naoacertou = 1;
 
     //Imprime a introdução do jogo
     printf("##########################\n");
@@ -32,7 +33,7 @@ int main() {
         case 2:
             n_tentativas = 6;
             break;
-        case 3:
+        default:
             n_tentativas = 3;
             break;
     }
@@ -58,8 +59,10 @@ int main() {
         
         //Verifica o chute do usuário
         if (acertou) {
-            printf("Parabéns!\n%d é o número secreto.\nVocê acertou.\n\n", chute);
+            printf("\n#     Parabéns!    #\n");
+            printf("#   Você ganhou!   #\n");
             printf("#  Pontuação: %.1f #\n", pontos);
+            naoacertou = 0;
             //Encerra o loop quando acertar o número
             break;
         } else if (maior)
@@ -68,6 +71,7 @@ int main() {
             printf("%d é menor que o número secreto.\n\n", chute);
         pontos -= abs(numerosecreto - chute) / 2.0;
     }
+    if(naoacertou) printf("#   Você perdeu!   #\n");
     printf("#    Fim de jogo   #\n");
     return 0;
 }
