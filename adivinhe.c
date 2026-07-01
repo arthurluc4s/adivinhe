@@ -25,6 +25,8 @@ int main() {
         //Verifica o chute do usuário
         if (acertou)
             printf("Você acertou o número. Parabéns!\n");
+            //Encerra o loop quando acertar o número
+            break;
         else {
             int maior = (chute > numerosecreto);
             if (maior) {
