@@ -1,26 +1,41 @@
-# Jogo Adivinhe
+# 🕹️ Jogo Adivinhe
 
-Jogo simples em C onde o jogador tenta adivinhar um número aleatório gerado pelo sistema.
+O **Adivinhe** é um jogo clássico de terminal desenvolvido na linguagem `C`, onde o jogador deve tentar acertar um número inteiro de 0 a 100.
 
-## Regras do jogo
+## 📝 Regras do jogo
 
-Definição em breve
+- Utilize somente números não negativos
 
-### Requisitos
+## 🔢 Sistema de pontuação
 
-GCC instalado
-Sistema Linux ou WSL
-Terminal
+- Pontuação inicial: 100 pontos
+- A cada chute errado é descontado metade da diferença entre o número secreto e o chute do usuário
 
-#### Como executar
+## 🛠️ Como Compilar e Rodar
 
-```bash
-gcc main.c -o jogo
-./jogo
-```
-##### Estrutura do projeto
+Se você está no Linux, abra o terminal e execute os comandos abaixo:
+
+1. Compile o código:
+   ```bash
+   gcc adivinhe.c -o adivinhe
+   ```
+2. Execute o jogo:
+   ```bash
+   ./adivinhe
+   ```
+
+## 📋 Requisitos
+
+- GCC instalado
+- Sistema Linux ou WSL
+- Terminal
+
+## 🗺️ Estrutura do projeto
+
 adivinhe/
-├── main.c
+├── adivinhe.c
 
+---
 
-Autor: Arthur Lucas
+> 👨‍💻 **Desenvolvido por Arthur Lucas**  
+> Veja mais projetos ou entre em contato pelo meu [GitHub @arthurluc4s](https://github.com/arthurluc4s)!
