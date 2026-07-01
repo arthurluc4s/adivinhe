@@ -4,30 +4,37 @@ int main() {
     //Variáveis
     int numerosecreto = 42;
     int chute;
+    int tentativas = 3;
 
     //Imprime a introdução do jogo
     printf("##########################\n");
     printf("#        Adivinhe!       #\n");
     printf("##########################\n");
 
-    //Lê chute do usuário
-    printf("Digite seu chute: ");
-    scanf("%d", &chute);
+    //Loop de tentativas
+    for(int i = 1; i <= tentativas; i++) {
 
-    printf("Você chutou o número: %d\n", chute);
-    
-    int acertou = (chute == numerosecreto);
-    //Verifica o chute do usuário
-    if (acertou)
-        printf("Você acertou o número. Parabéns!\n");
-    else {
-        int maior = (chute > numerosecreto);
-        if (maior) {
-            printf("Tente um número menor!\n");
-        } else {
-            printf("Tente um número maior!\n");
+        printf("# Tentativa %d/%d #\n", i, tentativas);
+        //Lê e imprime o chute do usuário
+        printf("Digite seu chute: ");
+        scanf("%d", &chute);
+        printf("Você chutou o número: %d\n", chute);
+
+        int acertou = (chute == numerosecreto);
+
+        //Verifica o chute do usuário
+        if (acertou)
+            printf("Você acertou o número. Parabéns!\n");
+        else {
+            int maior = (chute > numerosecreto);
+            if (maior) {
+                printf("Tente um número menor!\n");
+            } else {
+                printf("Tente um número maior!\n");
+            }
         }
     }
+    printf("# Fim de jogo! #\n");
 
     return 0;
 }
