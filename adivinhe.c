@@ -1,10 +1,12 @@
 #include <stdio.h>
 
+//Diretiva que funciona como constante
+#define N_TENTATIVAS 5
+
 int main() {
     //Variáveis
     int numerosecreto = 42;
     int chute;
-    int tentativas = 3;
 
     //Imprime a introdução do jogo
     printf("##########################\n");
@@ -12,9 +14,9 @@ int main() {
     printf("##########################\n");
 
     //Loop de tentativas
-    for(int i = 1; i <= tentativas; i++) {
+    for(int i = 1; i <= N_TENTATIVAS; i++) {
 
-        printf("# Tentativa %d/%d #\n", i, tentativas);
+        printf("# Tentativa %d/%d #\n", i, N_TENTATIVAS);
         //Lê e imprime o chute do usuário
         printf("Digite seu chute: ");
         scanf("%d", &chute);
