@@ -22,22 +22,19 @@ int main() {
         scanf("%d", &chute);
         printf("Você chutou o número: %d\n", chute);
 
+        //Testes condicionais do jogo
         int acertou = (chute == numerosecreto);
-
+        int maior = (chute > numerosecreto);
+        
         //Verifica o chute do usuário
         if (acertou) {
             printf("Você acertou o número. Parabéns!\n");
             //Encerra o loop quando acertar o número
             break;
-        }
-        else {
-            int maior = (chute > numerosecreto);
-            if (maior) {
-                printf("Tente um número menor!\n");
-            } else {
-                printf("Tente um número maior!\n");
-            }
-        }
+        } else if (maior)
+            printf("Tente um número menor!\n");
+        else
+            printf("Tente um número maior!\n");
     }
     printf("# Fim de jogo! #\n");
 
